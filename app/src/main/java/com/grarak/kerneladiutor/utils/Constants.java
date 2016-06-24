@@ -27,8 +27,8 @@ import java.util.List;
 public interface Constants {
 
     String TAG = "Kernel Adiutor";
-    String VERSION_NAME = "Custom";
-    int VERSION_CODE = 212;
+    String VERSION_NAME = "broken_01";
+    int VERSION_CODE = 01;
     String PREF_NAME = "prefs";
     String GAMMA_URL = "https://raw.githubusercontent.com/Grarak/KernelAdiutor/master/gamma_profiles.json";
     List<DAdapter.DView> ITEMS = new ArrayList<>();
