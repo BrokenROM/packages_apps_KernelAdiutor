@@ -9,11 +9,11 @@
         android:id="@+id/picture"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/color_primary"
+        android:background="@drawable/banner"
         android:contentDescription="@string/app_name"
         android:scaleType="centerCrop" />
 
-    <TextView
+    <!--TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
@@ -28,7 +28,7 @@
         android:paddingTop="13dp"
         android:text="@string/app_name"
         android:textColor="@color/white"
-        android:textSize="30sp" />
+        android:textSize="30sp" /-->
 
 </FrameLayout>
 
