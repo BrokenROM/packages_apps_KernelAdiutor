@@ -4,17 +4,17 @@
 
     <color name="color_primary">#000000</color>
     <color name="color_primary_dark">#000000</color>
-    <color name="color_primary_light">#000000</color>
+    <color name="color_primary_light">#202020</color>
 
-    <color name="statusbar_color">@color/color_primary_dark</color>
-    <color name="actionbar_color">@color/color_primary</color>
+    <color name="statusbar_color">#202020</color>
+    <color name="actionbar_color">#202020</color>
 
-    <color name="fab_normal">#009688</color>
-    <color name="fab_pressed">#009688</color>
-    <color name="fab_normal_menu">#009688</color>
-    <color name="fab_pressed_menu">#009688</color>
-    <color name="fab_normal_pink">#009688</color>
-    <color name="fab_pressed_pink">#009688</color>
+    <color name="fab_normal">#606060</color>
+    <color name="fab_pressed">#606060</color>
+    <color name="fab_normal_menu">#606060</color>
+    <color name="fab_pressed_menu">#606060</color>
+    <color name="fab_normal_pink">#606060</color>
+    <color name="fab_pressed_pink">#606060</color>
 
     <color name="white">#000000</color>
     <color name="black">#FFFFFF</color>
@@ -26,8 +26,8 @@
     <color name="circlebar_background_dark">@color/textcolor_dark</color>
     <color name="circlebar_text">#ffffff</color>
 
-    <color name="divider_background_light">#009688</color>
-    <color name="divider_background_dark">#009688</color>
+    <color name="divider_background_light">#606060</color>
+    <color name="divider_background_dark">#606060</color>
 
     <color name="navigationdrawer_background_light">#000000</color>
     <color name="navigationdrawer_background_dark">#000000</color>
@@ -35,7 +35,7 @@
     <color name="navigationdrawer_selected_background_light">#26FFFFFF</color>
 
     <color name="card_background_dark">#FAFAFA</color>
-    <color name="card_background_light">#202020</color>
+    <color name="card_background_light">#101010</color>
 
     <color name="textcolor_dark">#737373</color>
     <color name="textcolor_light">#BDBDBD</color>
