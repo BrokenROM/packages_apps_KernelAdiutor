@@ -20,6 +20,7 @@ import java.util.List;
  * Created by joe on 3/2/16.
  */
 public class PerAppMonitor extends AccessibilityService {
+    private static final String TAG = PerAppMonitor.class.getSimpleName();
     public static String sPackageName;
     public static String accessibilityId;
     String last_package = "";
@@ -38,6 +39,7 @@ public class PerAppMonitor extends AccessibilityService {
 
         if(event.getEventType() == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED && event.getPackageName() != null) {
             sPackageName = event.getPackageName().toString();
+            Log.d(TAG, "Package Name is "+sPackageName);
             if ((System.currentTimeMillis() - time) < 1000) {
                 if (!sPackageName.equals(launcher) || !sPackageName.equals("com.android.systemui")) {
                     process_window_change(sPackageName);
@@ -54,17 +56,18 @@ public class PerAppMonitor extends AccessibilityService {
 
     }
 
-    private void process_window_change (String windowname) {
-        if (!Per_App.app_profile_exists(windowname, getApplicationContext())) {
-            windowname = "Default";
+    private void process_window_change (String packageName) {
+        if (!Per_App.app_profile_exists(packageName, getApplicationContext())) {
+            packageName = "Default";
+            Log.d(TAG, "Profile does not exist. Using Default");
         }
-        if (Per_App.app_profile_exists(windowname, getApplicationContext())) {
+        if (Per_App.app_profile_exists(packageName, getApplicationContext())) {
             ArrayList<String> info = new ArrayList<String>();
-            // Item 0 is packagename Item 1 is the profile ID
-            info = Per_App.app_profile_info(windowname, getApplicationContext());
+            // Item 0 is package name Item 1 is the profile ID
+            info = Per_App.app_profile_info(packageName, getApplicationContext());
 
-            if (!windowname.equals(last_package) && !info.get(1).equals(last_profile)) {
-                last_package = windowname;
+            if (!packageName.equals(last_package) && !info.get(1).equals(last_profile)) {
+                last_package = packageName;
                 last_profile = info.get(1);
                 time = System.currentTimeMillis();
                 ProfileDB profileDB = new ProfileDB(getApplicationContext());
@@ -75,7 +78,7 @@ public class PerAppMonitor extends AccessibilityService {
                         if (Utils.getBoolean("Per_App_Toast", false, MainActivity.context)) {
                             Utils.toast("Applying Profile: " + profileItems.get(i).getName(), MainActivity.context);
                         }
-                        Log.i("Kernel Adiutor", "Applying Profile:  " + profileItems.get(i).getName() + " for package " + windowname);
+                        Log.i(TAG, "Applying Profile:  " + profileItems.get(i).getName() + " for package " + packageName);
                         ProfileDB.ProfileItem profileItem = profileItems.get(i);
                         List<String> paths = profileItem.getPath();
                         for (int x = 0; x < paths.size(); x++) {
