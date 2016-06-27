@@ -42,15 +42,15 @@ public class AboutusFragment extends RecyclerViewFragment {
     public void init(Bundle savedInstanceState) {
         super.init(savedInstanceState);
 
-        ModififactionInit();
-        ModififactionVersionInit();
+        ModificationInit();
+        ModificationVersionInit();
         licenseInit();
         appSourceInit();
         featureRequestInit();
         donateInit();
     }
 
-    private void ModififactionInit() {
+    private void ModificationInit() {
             CardViewItem.DCardView mModificationCard = new CardViewItem.DCardView();
             mModificationCard.setTitle(getString(R.string.modification));
             mModificationCard.setDescription(getString(R.string.modification_summary));
@@ -58,7 +58,7 @@ public class AboutusFragment extends RecyclerViewFragment {
         addView(mModificationCard);
         }
 
-    private void ModififactionVersionInit() {
+    private void ModificationVersionInit() {
         CardViewItem.DCardView mModificationVersionCard = new CardViewItem.DCardView();
         mModificationVersionCard.setTitle(getString(R.string.modification_version));
         mModificationVersionCard.setDescription(getString(R.string.modification_version_number));
